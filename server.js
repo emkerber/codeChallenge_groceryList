@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var express = require('express');
+var groceryListRouter = require('./routes/groceryList');
 var index = require('./routes/index');
 var bodyParser = require('body-parser');
 
@@ -9,6 +10,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.use('/', index);
+app.use('/groceries', groceryListRouter);
 
 var db = mongoose.connect('mongodb://localhost/grocery_list').connection;
 

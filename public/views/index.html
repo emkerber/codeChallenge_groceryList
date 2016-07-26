@@ -14,11 +14,9 @@
   <button ng-click="grocery.add()">Add!</button>
   <h2>Your list:</h2>
   <div ng-repeat="item in grocery.items">
-    <div ng-repeat="quantity in grocery.quantities">
-      <p>{{item}}: {{quantity}}</p>
-      <button ng-click="grocery.update(item, quantity)">Update</button>
-      <button ng-click="grocery.delete(item, quantity)">Delete</button>
-    </div>
+      <p>{{item.item}}: {{item.quantity}}</p>
+      <button ng-click="grocery.update(item)">Update</button>
+      <button ng-click="grocery.delete(item)">Delete</button>
   </div>
 </body>
 </html>
